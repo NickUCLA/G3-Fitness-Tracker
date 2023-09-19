@@ -1,17 +1,18 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
-  <link rel="stylesheet" href="/css/jass.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registry</title>
+    <link rel="stylesheet" href="/css/jass.css" />
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+
+  </head>
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
     <h1>
-      Fitness App
+      User Registry
     </h1>
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
@@ -27,10 +28,10 @@
       
   </footer>
 
-  <!-- Only include the logout script if the user is logged in -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+    <!-- Only include the logout script if the user is logged in -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>
