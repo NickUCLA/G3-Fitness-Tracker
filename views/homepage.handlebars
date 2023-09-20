@@ -1,10 +1,33 @@
 {{#each users as |user| }}
 <div class="row align-center mb-5">
   <div class="col-md-6">
-    <h2>{{{get_emoji}}} {{user.name}}</h2>
+    <h2>Hello {{user.name}}</h2>
   </div>
   <div class="col-md-6">
-    <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
+    <h1>Submit Workout Activity</h1>
+    <form action="/submit" method="POST">
+        <label for="exerciseType">Exercise Type:</label>
+        <input type="text" id="exerciseType" name="exercise_type" required><br><br>
+
+        <label for="workoutDescription">Workout Description:</label>
+        <input type="text" id="workoutDescription" name="description" required><br><br>
+
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight" name="weight" step="0.5" required>
+        <select name="weight_unit" required>
+            <option value="kg">kg</option>
+            <option value="lbs">lbs</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
   </div>
+  <h1>Past Workouts</h1>
+  <div></div>
+    <h3>Need a Workout Idea?</h3>
+  <button class="btn" id="submit-workout">Generate My Workout</button>
+  <div id="generatedWorkout"></div>
+  <h3>Need a Healthy Meal Recipe?</h3>
+  <button class="btn" id="submit-meal">Generate My Meal</button>
+  <div id="generatedMeal"></div>
 </div>
 {{/each}}
