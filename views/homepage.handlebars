@@ -21,8 +21,14 @@
         <input type="submit" value="Submit">
     </form>
   </div>
+  <div class="past-workouts">
   <h1>Past Workouts</h1>
-  <div></div>
+  <ul>
+    {{#each workouts as |workout| }}
+      <li>{{ workout.exercise_type }} - {{ workout.description }} - {{ workout.weight }} {{ workout.weight_unit }}</li>
+    {{/each}}
+  </ul>
+</div>
     <h3>Need a Workout Idea?</h3>
   <button class="btn" id="submit-workout">Generate My Workout</button>
   <div id="generatedWorkout"></div>
