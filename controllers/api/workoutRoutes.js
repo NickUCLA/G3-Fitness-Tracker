@@ -1,23 +1,12 @@
-const express = require('express');
-const router = express.Router();
-const Workout = require('../models/workout'); // 
+const router = require('express').Router();
+const { Workout } = require('../../models');
 
-router.post('/submit', async (req, res) => {
-  try {
-    const { exercise_type, description, weight, weight_unit } = req.body;
-    const workout = new Workout({
-      exercise_type,
-      description,
-      weight,
-      weight_unit,
-      userId: req.user.id, 
-    });
-    await workout.save();
-    res.redirect('/');
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Server Error');
-  }
+router.post('/submit', (req, res) => {
+  const { exercise_type, description, weight, weight_unit } = req.body;
+
+   const workout_id = 12345;
+console.log(req.body)
+  res.json({ workout_id });
 });
 
 module.exports = router;
