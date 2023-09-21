@@ -28,7 +28,13 @@ activityLog.init (
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: "comment",
+        modelName: "activityLog",
     }
 }
 )
+
+User.hasMany(activityLog, {
+    foreignKey: "user_id",
+});
+
+module.exports = User;
