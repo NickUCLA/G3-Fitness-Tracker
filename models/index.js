@@ -1,3 +1,8 @@
-const User = require('./User');
+const User = require("./User");
+const Weight = require("./weight");
 
-module.exports = { User };
+User.hasMany(Weight, {
+  foreignKey: "user_id",
+});
+
+module.exports = { User, Weight };
