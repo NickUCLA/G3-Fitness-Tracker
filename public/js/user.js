@@ -1,27 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   const ctx = document.getElementById("weightChart").getContext("2d");
 
-  // Sample weight data (replace with your actual data)
-  const weightData = [
-    { date: "2023-09-01", weight: 150 },
-    { date: "2023-09-02", weight: 149 },
-    { date: "2023-09-03", weight: 148 },
-    // Add more data points as needed
-  ];
+  let weightData = []; // Array to store weight data
 
-  // Extract dates and weights from the data
-  const dates = weightData.map((entry) => entry.date);
-  const weights = weightData.map((entry) => entry.weight);
-
-  // Create the chart
+  // Create an initial chart with no data
   const weightChart = new Chart(ctx, {
     type: "line",
     data: {
-      labels: dates,
+      labels: [],
       datasets: [
         {
           label: "Weight Tracker",
-          data: weights,
+          data: [],
           borderColor: "blue",
           backgroundColor: "rgba(0, 0, 255, 0.2)",
           borderWidth: 2,
@@ -52,59 +42,30 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
-});
-document.addEventListener("DOMContentLoaded", function () {
-  const ctx = document.getElementById("weightChart").getContext("2d");
 
-  // Sample weight data (replace with your actual data)
-  const weightData = [
-    { date: "2023-09-01", weight: 150 },
-    { date: "2023-09-02", weight: 149 },
-    { date: "2023-09-03", weight: 148 },
-    // Add more data points as needed
-  ];
+  // Function to add data
+  function addData() {
+    const weightInput = document.getElementById("weightInput");
+    const weight = parseFloat(weightInput.value);
 
-  // Extract dates and weights from the data
-  const dates = weightData.map((entry) => entry.date);
-  const weights = weightData.map((entry) => entry.weight);
+    if (!isNaN(weight)) {
+      // Get the current date
+      const currentDate = new Date();
 
-  // Create the chart
-  const weightChart = new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: dates,
-      datasets: [
-        {
-          label: "Weight Tracker",
-          data: weights,
-          borderColor: "blue",
-          backgroundColor: "rgba(0, 0, 255, 0.2)",
-          borderWidth: 2,
-          pointRadius: 4,
-          pointBackgroundColor: "blue",
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        x: {
-          type: "time",
-          time: {
-            unit: "day",
-            displayFormats: {
-              day: "MMM D",
-            },
-          },
-        },
-        y: {
-          title: {
-            display: true,
-            text: "Weight (lbs)",
-          },
-        },
-      },
-    },
-  });
+      // Add data to the arrays
+      weightData.push({ date: currentDate, weight: weight });
+
+      // Update the chart
+      weightChart.data.labels.push(currentDate.toLocaleDateString());
+      weightChart.data.datasets[0].data.push(weight);
+      weightChart.update();
+
+      // Clear the input field
+      weightInput.value = "";
+    }
+  }
+
+  // Add an event listener to the "Add Data" button
+  const addButton = document.querySelector("button");
+  addButton.addEventListener("click", addData);
 });
