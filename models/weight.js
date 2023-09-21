@@ -38,8 +38,6 @@ Weight.init(
   }
 );
 
-User.hasMany(Weight, {
-  foreignKey: "user_id",
-});
+
 
 module.exports = Weight;
