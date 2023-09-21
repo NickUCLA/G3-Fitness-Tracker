@@ -1,5 +1,6 @@
 const {Model, DataTypes} = require('sequelize')
-const sequelize = require('../config/connection')
+const sequelize = require('../config/connection');
+const { ActivityLog } = require('.');
 
 class activityLog extends Model {}
 
@@ -33,8 +34,4 @@ activityLog.init (
 }
 )
 
-User.hasMany(activityLog, {
-    foreignKey: "user_id",
-});
-
-module.exports = User;
+module.exports = activityLog;

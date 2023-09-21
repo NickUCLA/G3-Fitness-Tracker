@@ -51,9 +51,5 @@ User.init(
     modelName: "user",
   }
 );
-//connects the user and the user's activiy multiple activity log
-User.hasMany(activityLog, {
-  foreignKey: "user_id", 
-});
 
 module.exports = User;
