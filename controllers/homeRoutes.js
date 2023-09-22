@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Workout } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/test", async (req, res) => {
@@ -19,10 +19,22 @@ router.get("/", withAuth, async (req, res) => {
 
     const users = userData.map((project) => project.get({ plain: true }));
 
+        const workoutData = await Workout.findAll({
+          where:{
+            userId: req.session.user_id
+          }
+        });
+
+        console.log(workoutData)
+       
+        const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+        console.log("test")
+        console.log(workouts);
     res.render("homepage", {
       users,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
+      workouts
     });
   } catch (err) {
     res.status(500).json(err);
