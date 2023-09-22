@@ -24,8 +24,11 @@
   <div class="past-workouts">
     <h1>Past Workouts</h1>
     <ul>
-
+    {{#each ../workouts as |workout|}}
+    <li>{{workout.description}}</li>
+    {{/each}}
     </ul>
+
     <script src="./js/workout.js"></script>
 
   </div>
