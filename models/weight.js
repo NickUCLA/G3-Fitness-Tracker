@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const User = require("./User");
 
 class Weight extends Model {}
 
@@ -37,7 +38,5 @@ Weight.init(
     modelName: "weight",
   }
 );
-
-
 
 module.exports = Weight;
