@@ -25,7 +25,10 @@ const sess = {
     db: sequelize,
   }),
 };
-
+const apiWeightRoutes = require("./controllers/api/weightRoutes");
+const apiRoutes = require("./controllers/api/userRoutes");
+app.use(apiRoutes);
+app.use(apiWeightRoutes);
 // Add express-session and store as Express.js middleware
 app.use(session(sess));
 

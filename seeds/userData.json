@@ -2,6 +2,39 @@
   {
     "name": "admin",
     "email": "admin@gmail.com",
-    "password": "password"
+    "password": "password",
+    "weights": [
+      {
+        "weight": 160.5,
+        "recorded_at": "2023-09-15T08:00:00Z"
+      },
+      {
+        "weight": 159.8,
+        "recorded_at": "2023-09-16T08:00:00Z"
+      },
+      {
+        "weight": 159.2,
+        "recorded_at": "2023-09-17T08:00:00Z"
+      }
+    ]
+  },
+  {
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "password123",
+    "weights": [
+      {
+        "weight": 160.5,
+        "recorded_at": "2023-09-15T08:00:00Z"
+      },
+      {
+        "weight": 159.8,
+        "recorded_at": "2023-09-16T08:00:00Z"
+      },
+      {
+        "weight": 159.2,
+        "recorded_at": "2023-09-17T08:00:00Z"
+      }
+    ]
   }
 ]
