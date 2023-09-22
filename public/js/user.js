@@ -3,11 +3,13 @@ fetch("/api/weights")
   .then((response) => response.json())
   .then((userData) => {
     console.log(userData);
-    const user = userData;
-    const labels = user.weights.map((weightData) => weightData.recorded_at);
-    const data = user.weights.map((weightData) => weightData.weight);
+
+    const labels = userData.map((weightData) => weightData.recorded_at);
+    const data = userData.map((weightData) => weightData.weight);
+
     console.log(data);
     console.log(labels);
+
     // Create the chart
     new Chart(ctx, {
       type: "line",

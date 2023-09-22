@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Weight } = require("../../models");
 
-router.get("api/weights", async (req, res) => {
+router.get("/api/weights", async (req, res) => {
   try {
     const weightData = await Weight.findAll(); // Fetch data from the Weight model
     res.json(weightData);

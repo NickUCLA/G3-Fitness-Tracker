@@ -1,6 +1,6 @@
 const { Weight } = require("../models");
 
-exports.getUserWeights = async (req, res) => {
+exports.getWeights = async (req, res) => {
   try {
     const userData = await Weight.findAll({
       Where: {
