@@ -22,18 +22,20 @@ const postWorkout = (workout) =>
     });
 
 const fetchAndRenderWorkouts = () => {
-  // Assuming you have a route to fetch workouts from the server
   fetch('/api/workouts')
     .then((res) => res.json())
     .then((data) => {
-      const pastWorkoutsList = document.querySelector('.past-workouts ul');
+
+      const pastWorkoutsList = document.getElementById('workout-list'); // Updated line
       pastWorkoutsList.innerHTML = '';
 
       data.workouts.forEach((workout) => {
         const li = document.createElement('li');
         li.textContent = `${workout.exercise_type} - ${workout.description} - ${workout.weight} ${workout.weight_unit}`;
         pastWorkoutsList.appendChild(li);
+      
       });
+      console.log('Workouts rendered:', data.workouts);
     })
     .catch((error) => {
       console.error('Error fetching workouts:', error);

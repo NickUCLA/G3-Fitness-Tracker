@@ -1,0 +1,26 @@
+[
+    {
+        "exercise_type": "legs",
+        "description": "leg day",
+        "weight": "150",
+        "weight_unit": "kg"
+    },
+    {
+        "exercise_type": "chest",
+        "description": "push day",
+        "weight": "151",
+        "weight_unit": "kg"
+    },
+    {
+        "exercise_type": "back",
+        "description": "pull day",
+        "weight": "152",
+        "weight_unit": "kg"
+    },
+    {
+        "exercise_type": "legs",
+        "description": "leg day",
+        "weight": "150",
+        "weight_unit": "kg"
+    }
+]
