@@ -25,13 +25,16 @@
     <h1>Past Workouts</h1>
     <ul>
     {{#each ../workouts as |workout|}}
-    <li>{{workout.description}}</li>
+    <li id="workout-{{workout.id}}">
+         Workout Name:{{workout.exercise_type}}<br>
+         Description:{{workout.description}}<br>
+         Weight:{{workout.weight}}{{workouk.weight_unit}}
+         <button class="delete-workout" data-workout-id="{{workout.id}}">Delete</button>
     {{/each}}
     </ul>
-
     <script src="./js/workout.js"></script>
-
   </div>
+
   <h3>Need a Workout Idea?</h3>
   <label for="duration">Duration (in minutes):</label>
   <input type="number" id="duration" min="1" required><br><br>
