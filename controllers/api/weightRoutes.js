@@ -3,7 +3,9 @@ const { Weight } = require("../../models");
 
 router.get("/api/weights", async (req, res) => {
   try {
-    const weightData = await Weight.findAll(); // Fetch data from the Weight model
+
+    const weightData = await Weight.findAll();
+    console.log(weightData)
     res.json(weightData);
   } catch (error) {
     console.error("Error fetching weight data:", error);

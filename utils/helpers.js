@@ -1,14 +1,15 @@
 module.exports = {
-  get_emoji: () => {
-    const randomNum = Math.random();
-    let book = "📗";
+  formatDate: (date) => {
+const recordedAtDate = new Date(date);
 
-    if (randomNum > 0.7) {
-      book = "📘";
-    } else if (randomNum > 0.4) {
-      book = "📙";
-    }
+// Extracts month, day, and last two digits of the year
+const month = recordedAtDate.getMonth() + 1; // Adding 1 because getMonth() is zero-based
+const day = recordedAtDate.getDate();
+const yearLastTwoDigits = recordedAtDate.getFullYear().toString().slice(-2);
 
-    return `<span for="img" aria-label="book">${book}</span>`;
+// Format the date as "month/day/last 2 of year"
+const formattedDate = `${month}/${day}/${yearLastTwoDigits}`;
+
+return formattedDate
   },
 };
