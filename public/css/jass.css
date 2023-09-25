@@ -46,3 +46,94 @@ header {
       font-size: 16px; /* Increase font size for larger screens */
     }
   }
+
+  /*start of homepage css styling */
+  /* Center-align the content within each row */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Add margin between rows */
+  }
+  
+  /* Style the form and its labels */
+  form {
+    background-color: #f5f5f5; /* Light gray background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow */
+  }
+  
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  /* Style the input fields and select boxes */
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style the submit button */
+  input[type="submit"],
+  .button {
+    background-color: #007bff; /* Primary color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style the unordered list */
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  /* Style the generated workout and meal sections */
+  #generatedWorkout,
+  #generatedMeal {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style the buttons for generating workout and meal */
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 767px) {
+    /* Add styles for screens less than 768px wide */
+    .col-md-6 {
+      width: 100%; /* Make columns full width on small screens */
+    }
+  
+    label {
+      display: block; /* Stack labels on top of inputs on small screens */
+      margin-bottom: 5px;
+    }
+  
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%; /* Make inputs and selects full width on small screens */
+    }
+}
