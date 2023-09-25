@@ -27,12 +27,13 @@ const sess = {
     db: sequelize,
   }),
 };
+app.use(session(sess));
 const apiWeightRoutes = require("./controllers/api/weightRoutes");
-const apiRoutes = require("./controllers/api/userRoutes");
-app.use(apiRoutes);
+const userRoutes = require("./controllers/userRoutes");
+app.use(userRoutes);
 app.use(apiWeightRoutes);
 // Add express-session and store as Express.js middleware
-app.use(session(sess));
+
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");

@@ -1,9 +1,7 @@
 const router = require("express").Router();
-const { User } = require("../../models");
-const userController = require("../userController");
+const { User } = require("../models");
 
 // Define the route to retrieve user weight data
-router.get("/api/user", userController.getUserWeights);
 
 router.post('/', async (req, res) => {
   try {
@@ -46,7 +44,7 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-
+      console.log(req.session.user_id)
       res.json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
