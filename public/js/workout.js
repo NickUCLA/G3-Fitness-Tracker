@@ -60,3 +60,27 @@ workoutForm.addEventListener('submit', (e) => {
     })
     .catch((err) => console.error(err));
 });
+
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('delete-workout')) {
+    const workoutId = event.target.dataset.workoutId;
+    deleteWorkout(workoutId);
+  }
+});
+
+function deleteWorkout(workoutId) {
+  fetch(`/api/workouts/delete/${workoutId}`, {
+    method: 'DELETE'
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Error deleting workout: ${response.statusText}`);
+    }
+    return response.text(); 
+  })
+  .then(data => {
+    console.log(data); 
+    fetchAndRenderWorkouts(); 
+  })
+  .catch(error => console.error('Error:', error));
+}
