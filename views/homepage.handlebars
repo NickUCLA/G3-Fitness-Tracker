@@ -21,6 +21,8 @@
         <option value="kg">kg</option>
         <option value="lbs">lbs</option>
       </select><br><br>
+       <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required><br><br>
       <input type="submit" value="Submit">
     </form>
   </div>
@@ -29,9 +31,10 @@
     <ul>
     {{#each ../workouts as |workout|}}
     <li id="workout-{{workout.id}}">
-         Workout Name:{{workout.exercise_type}}<br>
-         Description:{{workout.description}}<br>
-         Weight:{{workout.weight}}{{workouk.weight_unit}}
+         Workout Name: {{workout.exercise_type}}<br>
+         Description: {{workout.description}}<br>
+         Weight: {{workout.weight}}{{workouk.weight_unit}}<br>
+         Date: {{workout.date}}<br>
          <button class="delete-workout" data-workout-id="{{workout.id}}">Delete</button>
     {{/each}}
     </ul>

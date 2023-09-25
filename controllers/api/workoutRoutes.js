@@ -2,12 +2,13 @@ const router = require("express").Router();
 const { Workout } = require("../../models");
 
 router.post("/submit", async (req, res) => {
-  const { exercise_type, description, weight, weight_unit } = req.body;
+  const { exercise_type, description, weight, weight_unit, date } = req.body;
   const workoutData = await Workout.create({
     exercise_type: exercise_type,
     description: description,
     weight: weight,
     weight_unit: weight_unit,
+    date: date,
     userId: req.session.user_id,
   });
   res.json(workoutData.get({ plain: true }).id);

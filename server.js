@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
 app.post('/submit', (req, res) => {
-  const { exercise_type, description, weight, weight_unit } = req.body;
+  const { exercise_type, description, weight, weight_unit, date } = req.body;
 
    const workout_id = 12345;
 
