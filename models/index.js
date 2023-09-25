@@ -10,8 +10,4 @@ Weight.belongsTo(User, {
   foreignKey: "user_id",
 });
 
-Weight.belongsTo(User, {
-  foreignKey: "user_id",
-});
-
 module.exports = { User, Weight, Workout };
