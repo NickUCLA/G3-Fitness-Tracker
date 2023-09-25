@@ -13,4 +13,25 @@ router.post("/submit", async (req, res) => {
   res.json(workoutData.get({ plain: true }).id);
 });
 
+router.delete("/delete/:id", async (req, res) => {
+  try {
+    const workoutId = req.params.id;
+    const deletedWorkout = await Workout.destroy({
+      where: {
+        id: workoutId,
+        userId: req.session.user_id, 
+      },
+    });
+    if (deletedWorkout) {
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(404);
+    }
+  } catch (error) {
+    console.error("Error deleting workout:", error);
+    res.sendStatus(500);
+  }
+});
+
+
 module.exports = router;
