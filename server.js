@@ -51,6 +51,25 @@ app.post('/submit', (req, res) => {
   res.json({ workout_id });
 });
 
+app.delete('/api/workouts/delete/:id', async (req, res) => {
+  try {
+    const workoutId = req.params.id;
+    const deletedWorkout = await Workout.destroy({
+      where: { id: workoutId }
+    });
+
+    if (deletedWorkout) {
+      res.json({ message: `Workout with ID ${workoutId} deleted successfully.` });
+    } else {
+      res.status(404).json({ message: `Workout with ID ${workoutId} not found.` });
+    }
+  } catch (error) {
+    console.error('Error deleting workout:', error);
+    res.status(500).json({ message: 'Internal server error.' });
+  }
+});
+
+
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
