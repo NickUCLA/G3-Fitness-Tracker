@@ -8,7 +8,7 @@ const regFormHandler = async (event) => {
   const password = document.querySelector('#password-signup').value.trim();
   const goalWeight = document.querySelector('#goal-weight').value.trim(); // New line
 
-  if (name && email && password) {
+  if (name && email && password && goalWeight) {
     // Send the e-mail and password to the server
     const response = await fetch('/user', {
       method: 'POST',
