@@ -36,10 +36,10 @@ User.init(
         len: [8],
       },
     },
-    goalWeight: { 
-      type: DataTypes.FLOAT, 
-      allowNull: true, 
-    },
+    goalWeight: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    }
   },
   {
     hooks: {

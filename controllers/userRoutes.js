@@ -3,7 +3,7 @@ const { User } = require("../models");
 
 // Define the route to retrieve user weight data
 
-router.post("/", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     const userData = await User.create(req.body);
 

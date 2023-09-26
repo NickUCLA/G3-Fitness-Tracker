@@ -5,10 +5,11 @@ fetch("/api/weights")
   .then((userData) => {
     console.log(userData);
 
-
+    const goal = userData[0].user.goalWeight
     const labels = userData.map((weightData) => formatDate(weightData.recorded_at));
     const data = userData.map((weightData) => weightData.weight);
 
+    console.log(goal)
     console.log(data);
     console.log(labels);
 
@@ -28,7 +29,7 @@ fetch("/api/weights")
       options: {
         scales: {
           y: {
-            min: 150, // Set the minimum to target weight var
+            min: goal, // Set the minimum to target weight var
           },
         },
       },

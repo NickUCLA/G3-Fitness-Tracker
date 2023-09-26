@@ -17,7 +17,7 @@ const regFormHandler = async (event) => {
     }
 
     // Send the e-mail and password to the server
-    const response = await fetch('/user', {
+    const response = await fetch('user/signup', {
       method: 'POST',
       body: JSON.stringify({ "name":name, "email":email, "password":password, "goalWeight": goalWeight }),
       headers: { 'Content-Type': 'application/json' },
