@@ -33,7 +33,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
   }
   
   /* Form Styles */
-  .form {
+  .form{
     background-color: #fff; 
     border: 1px solid #ccc; 
     padding: 20px; 
@@ -66,5 +66,10 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
     .main-content {
       max-width: 100%; /* Allow content to take full width on smaller screens */
     }
+  }
+
+  #weightChart {
+    width:100% !important;
+    height:30% !important;
   }
   
