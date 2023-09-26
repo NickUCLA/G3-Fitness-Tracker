@@ -36,6 +36,10 @@ User.init(
         len: [8],
       },
     },
+    goalWeight: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   },
   {
     hooks: {
