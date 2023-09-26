@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Workout } = require("../../models");
+const { Workout, Weight } = require("../../models");
 
 router.post("/submit", async (req, res) => {
   const { exercise_type, description, weight, weight_unit, date } = req.body;
@@ -13,7 +13,7 @@ router.post("/submit", async (req, res) => {
   });
 
   await Weight.create({
-    weight: weight, 
+    weight: weight,
     recorded_at: date,
     user_id: req.session.user_id,
   });
