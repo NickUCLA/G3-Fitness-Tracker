@@ -2,28 +2,29 @@
 <div class="row align-center mb-5">
   <div class="col-md-6">
     <h2>Hello {{user.name}}</h2>
+    <h2>Goal Weight: {{user.goalWeight}}</h2>
   </div>
   <div style="width: 80%; margin: 0 auto;">
   <canvas id="weightChart"></canvas>
 </div>
   <div class="col-md-6">
     <h1>Submit Workout Activity</h1>
-    <form id="workout-form">
+    <form class="form" id="workout-form">
       <label for="exerciseType">Exercise Type:</label>
-      <input type="text" id="exerciseType" name="exercise_type" required><br><br>
+      <input class="form-input" type="text" id="exerciseType" name="exercise_type" required><br><br>
 
       <label for="workoutDescription">Workout Description:</label>
-      <input type="text" id="workoutDescription" name="description" required><br><br>
+      <input class="form-input" type="text" id="workoutDescription" name="description" required><br><br>
 
       <label for="weight">Weight:</label>
-      <input type="number" id="weight" name="weight" step="0.5" required>
+      <input class="form-input" type="number" id="weight" name="weight" step="0.5" required>
       <select name="weight_unit" required>
         <option value="kg">kg</option>
         <option value="lbs">lbs</option>
       </select><br><br>
        <label for="date">Date:</label>
     <input type="date" id="date" name="date" required><br><br>
-      <input type="submit" value="Submit">
+      <input class="btn" type="submit" value="Submit">
     </form>
   </div>
   <div class="past-workouts">
@@ -40,10 +41,10 @@
     </ul>
     <script src="./js/workout.js"></script>
   </div>
-
   <h3>Need a Workout Idea?</h3>
+  <div class="form">
   <label for="duration">Duration (in minutes):</label>
-  <input type="number" id="duration" min="1" required><br><br>
+  <input class="form-input" type="number" id="duration" min="1" required><br><br>
   <label for="type">Type of Workout:</label>
   <select id="type">
     <option value="cardio">Cardio</option>
@@ -53,10 +54,13 @@
   </select><br><br>
   <button class="btn" id="submit-workout">Generate My Workout</button>
   <div id="generatedWorkout"></div>
+  </div>
   <h3>Need a healthy meal idea?</h3>
+  <div class="form">
   <button class="btn" id="submit-meal">Generate My Meal</button>
   <div id="generatedMeal"></div>
   <script type="module" src="./js/gpt.js"></script>
+  </div>
 </div>
 <script src="/js/chart.js"></script>
 {{/each}}
