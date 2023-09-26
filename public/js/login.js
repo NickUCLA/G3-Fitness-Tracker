@@ -6,20 +6,15 @@ const regFormHandler = async (event) => {
   const name = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  const goalWeight = document.querySelector('#goal-weight').value.trim(); // New line
 
-  if (name && email && password) {
+  if (name && email && password && goalWeight) {
     // Send the e-mail and password to the server
     const response = await fetch('/user', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ "name":name, "email":email, "password":password, "goalWeight": goalWeight }),
       headers: { 'Content-Type': 'application/json' },
     });
-
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to log in');
-    }
   }
 };
 
