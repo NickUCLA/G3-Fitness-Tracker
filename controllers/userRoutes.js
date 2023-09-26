@@ -3,7 +3,7 @@ const { User } = require("../models");
 
 // Define the route to retrieve user weight data
 
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      console.log(req.session.user_id)
+      console.log(req.session.user_id);
       res.json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
