@@ -9,6 +9,13 @@ const regFormHandler = async (event) => {
   const goalWeight = document.querySelector('#goal-weight').value.trim(); // New line
 
   if (name && email && password && goalWeight) {
+
+    // Validate password length
+    if (password.length < 8) {
+      alert("Password must be 8 characters or longer.");
+      return; // Exit function if password is too short
+    }
+
     // Send the e-mail and password to the server
     const response = await fetch('user/signup', {
       method: 'POST',
