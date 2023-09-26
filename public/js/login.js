@@ -11,15 +11,11 @@ const regFormHandler = async (event) => {
     // Send the e-mail and password to the server
     const response = await fetch('/user', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ "name":name, "email":email, "password":password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to log in');
-    }
+   
   }
 };
 
