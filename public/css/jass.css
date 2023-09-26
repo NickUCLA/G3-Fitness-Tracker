@@ -1,0 +1,70 @@
+/* Reset Default Styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set a Default Font and Background Color */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px; 
+  }
+  
+  /* Navigation Styles */
+  nav {
+    background-color: #444; 
+    color: #fff; 
+    padding: 10px; 
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 20px; 
+  }
+  
+  /* Form Styles */
+  .form {
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    padding: 20px; 
+  }
+  
+  /* Button Styles */
+  .btn {
+    background-color: #007bff;
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+  }
+  
+  /* Input Styles */
+  .form-input {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
+  }
+  
+  /* Centered Text Styles */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    /* Adjust styles for screens smaller than 768px */
+    .main-content {
+      max-width: 100%; /* Allow content to take full width on smaller screens */
+    }
+  }
+  
