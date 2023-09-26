@@ -3,6 +3,7 @@ const descriptionInput = document.getElementById('workoutDescription');
 const weightInput = document.getElementById('weight');
 const weightUnitInput = document.querySelector('select[name="weight_unit"]');
 const workoutForm = document.querySelector('#workout-form');
+const dateInput = document.getElementById('date');
 
 const postWorkout = (workout) =>
   fetch('/api/workouts/submit', {
@@ -26,12 +27,13 @@ const fetchAndRenderWorkouts = () => {
     .then((res) => res.json())
     .then((data) => {
 
-      const pastWorkoutsList = document.getElementById('workout-list'); // Updated line
+      const pastWorkoutsList = document.getElementById('workout-list'); 
       pastWorkoutsList.innerHTML = '';
 
       data.workouts.forEach((workout) => {
         const li = document.createElement('li');
-        li.textContent = `${workout.exercise_type} - ${workout.description} - ${workout.weight} ${workout.weight_unit}`;
+        li.textContent = `${workout.exercise_type} - ${workout.description} - ${workout.weight} ${workout.weight_unit} -
+        ${workout.date}`;
         pastWorkoutsList.appendChild(li);
       
       });
@@ -50,6 +52,7 @@ workoutForm.addEventListener('submit', (e) => {
     description: descriptionInput.value.trim(),
     weight: weightInput.value,
     weight_unit: weightUnitInput.value,
+    date: dateInput.value
   };
 
 
