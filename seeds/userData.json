@@ -3,6 +3,7 @@
     "name": "admin",
     "email": "admin@gmail.com",
     "password": "password",
+    "goalWeight": 155.0,
     "weights": [
       {
         "weight": 160.5,
@@ -22,6 +23,7 @@
     "name": "John Doe",
     "email": "johndoe@example.com",
     "password": "password123",
+    "goalWeight": 150.0,
     "weights": [
       {
         "weight": 160.5,

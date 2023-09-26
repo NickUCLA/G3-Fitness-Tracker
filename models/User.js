@@ -37,7 +37,7 @@ User.init(
       },
     },
     goalWeight: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.FLOAT,
       allowNull: false,
     }
   },
