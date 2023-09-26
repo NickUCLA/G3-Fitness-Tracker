@@ -60,6 +60,7 @@ workoutForm.addEventListener('submit', (e) => {
     .then((data) => {
       console.log(`Workout added! Workout ID: ${data.workout_id}`);
       fetchAndRenderWorkouts();
+       location.reload();
     })
     .catch((err) => console.error(err));
 });
@@ -83,7 +84,8 @@ function deleteWorkout(workoutId) {
   })
   .then(data => {
     console.log(data); 
-    fetchAndRenderWorkouts(); 
+    fetchAndRenderWorkouts();
+     location.reload(); 
   })
   .catch(error => console.error('Error:', error));
 }
