@@ -12,12 +12,16 @@ router.get("/test", async (req, res) => {
 // Prevent non logged in users from viewing the homepage
 router.get("/", withAuth, async (req, res) => {
   try {
-    const userData = await User.findAll({
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      order: [["name", "ASC"]],
     });
 
-    const users = userData.map((project) => project.get({ plain: true }));
+    if (!userData) {
+      // Handle the case where the user is not found
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const user = userData.get({ plain: true });
 
         const workoutData = await Workout.findAll({
           where:{
@@ -31,7 +35,8 @@ router.get("/", withAuth, async (req, res) => {
         console.log("test")
         console.log(workouts);
     res.render("homepage", {
-      users,
+      user,
+      sessionUserId: req.session.user_id,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
       workouts
