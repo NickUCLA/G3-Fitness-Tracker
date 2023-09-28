@@ -27,6 +27,8 @@ fetch("/api/weights")
         ],
       },
       options: {
+          "responsive": true,
+          "maintainAspectRatio": false,
         scales: {
           y: {
             min: goal, // Set the minimum to target weight var
@@ -52,3 +54,5 @@ fetch("/api/weights")
     
     return formattedDate
   }
+
+  
