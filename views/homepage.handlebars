@@ -29,14 +29,15 @@
   <div class="past-workouts">
     <h1>Past Workouts</h1>
     <ul>
-    {{#each ../workouts as |workout|}}
-    <li id="workout-{{workout.id}}">
-         Workout Name: {{workout.exercise_type}}<br>
-         Description: {{workout.description}}<br>
-         Weight: {{workout.weight}}{{workouk.weight_unit}}<br>
-         Date: {{workout.date}}<br>
-         <button class="delete-workout" data-workout-id="{{workout.id}}">Delete</button>
-    {{/each}}
+  {{#each pastWorkouts}}
+  <li class="form" id="workout-{{dataValues.id}}">
+    Workout Name: {{dataValues.exercise_type}}<br>
+    Description: {{dataValues.description}}<br>
+    Weight: {{dataValues.weight}}{{dataValues.weight_unit}}<br>
+    Date: {{dataValues.date}}<br>
+    <button class="delete-workout btn" data-workout-id="{{dataValues.id}}">Delete</button>
+  </li>
+{{/each}}
     </ul>
     <script src="./js/workout.js"></script>
   </div>

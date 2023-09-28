@@ -23,23 +23,20 @@ router.get("/", withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-        const workoutData = await Workout.findAll({
-          where:{
-            userId: req.session.user_id
-          }
+        const pastWorkouts = await Workout.findAll({
+          where: {
+            userId: req.session.user_id,
+          },
+          order: [["date", "DESC"]],
         });
+console.log(pastWorkouts)
 
-        console.log(workoutData)
-       
-        const workouts = workoutData.map((workout) => workout.get({ plain: true }));
-        console.log("test")
-        console.log(workouts);
     res.render("homepage", {
       user,
       sessionUserId: req.session.user_id,
       // Pass the logged in flag to the template
       logged_in: req.session.logged_in,
-      workouts
+      pastWorkouts: pastWorkouts
     });
   } catch (err) {
     res.status(500).json(err);
