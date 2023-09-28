@@ -22,6 +22,19 @@ const regFormHandler = async (event) => {
       body: JSON.stringify({ "name":name, "email":email, "password":password, "goalWeight": goalWeight }),
       headers: { 'Content-Type': 'application/json' },
     });
+
+    if (response.ok) {
+      alert('Account created successfully!');
+
+      // Clear the form values
+      document.querySelector('#name-signup').value = '';
+      document.querySelector('#email-signup').value = '';
+      document.querySelector('#password-signup').value = '';
+      document.querySelector('#goal-weight').value = '';
+
+      // Reload the page
+      location.reload();
+    }
   }
 };
 
