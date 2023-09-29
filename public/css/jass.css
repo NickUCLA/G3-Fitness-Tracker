@@ -27,7 +27,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
   
   /* Main Content Styles */
   .main-content {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto; 
     padding: 20px; 
   }
@@ -41,11 +41,8 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
   
   /* Button Styles */
   .btn {
-    background-color: #007bff;
-    color: #fff; 
     padding: 10px 20px; 
-    border: none; 
-    cursor: pointer; 
+    border: none;  
   }
   
   /* Input Styles */
@@ -68,5 +65,16 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
     }
   }
 
-
+  header {
+    text-align: center; /* Horizontally center */
+    padding: 20px; /* Add padding for spacing */
+  }
   
+  header h1 {
+    margin: 0; /* Remove default margin for h1 */
+  }
+  
+  /* Style the logout button if it's displayed */
+  header .btn {
+    margin-top: 10px; /* Add top margin for the button */
+  }
