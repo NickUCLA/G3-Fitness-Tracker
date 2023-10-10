@@ -1,6 +1,7 @@
 # G3 Fitness Tracker
 
 ![G3 Fitness Tracker](./public/images/screenshot.png)
+https://g3fitness-tracker-54a2e145f48e.herokuapp.com/login
 
 G3 Fitness Tracker is a web application designed to help users track their fitness progress, log workouts, and receive personalized workout and meal suggestions powered by AI. This README provides an overview of the project, how to set it up, and key features.
 
